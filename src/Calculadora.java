@@ -25,8 +25,8 @@ public class Calculadora {
    * @param overworld Coordenadas
    * @return Coordenadas nether
    */
-  public static Coordenadas calculCoordenadasNether(Coordenadas overworld) {
-    Coordenadas nether = new Coordenadas(overworld.getZ());
+  public static Coordenada calculCoordenadasNether(Coordenada overworld) {
+    Coordenada nether = new Coordenada(overworld.getZ());
     nether.setX(overworld.getX() / DIVISOR);
     nether.setY(overworld.getY() / DIVISOR);
     return nether;

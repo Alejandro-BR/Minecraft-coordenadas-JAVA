@@ -1,5 +1,4 @@
 /**
- * 
  * Clase entity Coordenadas:
  * 
  * Esta clase representa las coordenadas
@@ -10,7 +9,7 @@
 
 package src;
 
-public class Coordenadas {
+public class Coordenada {
 
   //////// Atributos
   private int x;
@@ -26,7 +25,7 @@ public class Coordenadas {
    * @param z int 
    * @param y int
    */
-  public Coordenadas(int x, int z, int y) {
+  public Coordenada(int x, int z, int y) {
     this.x = x;
     this.z = z;
     this.y = y;
@@ -37,7 +36,7 @@ public class Coordenadas {
    * 
    * @param z int 
    */
-  public Coordenadas(int z) {
+  public Coordenada(int z) {
     this.z = z;
     this.x = 0;
     this.y = 0;
@@ -46,7 +45,7 @@ public class Coordenadas {
   /**
    * Constructor basico.
    */
-  public Coordenadas() {
+  public Coordenada() {
     this.z = 0;
     this.x = 0;
     this.y = 0;
@@ -76,6 +75,34 @@ public class Coordenadas {
 
   public void setY(int y) {
     this.y = y;
+  }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + x;
+    result = prime * result + z;
+    result = prime * result + y;
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    Coordenada other = (Coordenada) obj;
+    if (x != other.x)
+      return false;
+    if (z != other.z)
+      return false;
+    if (y != other.y)
+      return false;
+    return true;
   }
 
   @Override
